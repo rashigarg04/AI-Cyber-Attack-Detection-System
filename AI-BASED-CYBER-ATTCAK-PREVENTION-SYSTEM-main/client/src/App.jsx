@@ -7,6 +7,7 @@ import Register from "./pages/Register";
 // Layout Components
 import Sidebar from './components/Sidebar';
 import Navbar from './components/Navbar';
+import Footer from './components/Footer';
 
 // Page Components
 import Dashboard from './pages/Dashboard';
@@ -23,48 +24,51 @@ function Layout() {
       <div className="flex-1 flex flex-col min-w-0">
         <Navbar />
 
-        <main className="flex-1 overflow-y-auto bg-slate-950">
-          <Routes>
+        <main className="flex-1 overflow-y-auto bg-slate-950 flex flex-col">
+          <div className="flex-1">
+            <Routes>
 
-            {/* 🔒 Protected Routes */}
-            <Route path="/" element={
-              <ProtectedRoute>
-                <Dashboard />
-              </ProtectedRoute>
-            } />
+              {/* 🔒 Protected Routes */}
+              <Route path="/" element={
+                <ProtectedRoute>
+                  <Dashboard />
+                </ProtectedRoute>
+              } />
 
-            <Route path="/logs" element={
-              <ProtectedRoute>
-                <ThreatLogs />
-              </ProtectedRoute>
-            } />
+              <Route path="/logs" element={
+                <ProtectedRoute>
+                  <ThreatLogs />
+                </ProtectedRoute>
+              } />
 
-            <Route path="/settings" element={
-              <ProtectedRoute>
-                <Settings />
-              </ProtectedRoute>
-            } />
+              <Route path="/settings" element={
+                <ProtectedRoute>
+                  <Settings />
+                </ProtectedRoute>
+              } />
 
-            <Route path="/network" element={
-              <ProtectedRoute>
-                <NetworkMap />
-              </ProtectedRoute>
-            } />
+              <Route path="/network" element={
+                <ProtectedRoute>
+                  <NetworkMap />
+                </ProtectedRoute>
+              } />
 
-            <Route path="/firewall" element={
-              <ProtectedRoute>
-                <Firewall />
-              </ProtectedRoute>
-            } />
+              <Route path="/firewall" element={
+                <ProtectedRoute>
+                  <Firewall />
+                </ProtectedRoute>
+              } />
 
-            {/* 404 */}
-            <Route path="*" element={
-              <div className="p-8 text-slate-500 font-mono">
-                404_COMMAND_NOT_FOUND
-              </div>
-            } />
+              {/* 404 */}
+              <Route path="*" element={
+                <div className="p-8 text-slate-500 font-mono">
+                  404_COMMAND_NOT_FOUND
+                </div>
+              } />
 
-          </Routes>
+            </Routes>
+          </div>
+          <Footer />
         </main>
       </div>
     </div>
