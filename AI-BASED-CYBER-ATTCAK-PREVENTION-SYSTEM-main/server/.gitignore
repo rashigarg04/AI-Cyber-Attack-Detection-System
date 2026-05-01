@@ -1,0 +1,15 @@
+# Python / Django
+__pycache__/
+*.pyc
+venv/
+env/
+db.sqlite3
+.env
+
+# React / Node
+node_modules/
+dist/
+.DS_Store
+
+# AI Models (If they are >100MB, GitHub will block them)
+#*.pkl
